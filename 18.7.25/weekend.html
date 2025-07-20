@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Event loop Example
+        console.log("1");
+        setTimeout(()=>{
+            console.log("2");
+        },0);
+        Promise.resolve().then(()=>{
+            console.log("3");
+        });
+        console.log("4");
+
+        //Reachable and unreachable
+        function gc() {
+        let obj = {
+            name: "no value"
+        }; 
+        console.log(obj.name);
+         obj =null;
+        }
+        
+        // class in js
+        class Person {
+            constructor(name, age) {
+                this.name =name;
+                this.age =age;
+            }
+            greet() {
+                console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+            }
+        }
+
+        const sweedy =new Person("Sweedy", 20);
+        sweedy.greet(); 
+
+        // Inheritance
+        class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+            console.log(`${this.name} makes a sound`);
+        }
+        }
+        class Dog extends Animal {
+        speak() {
+            console.log(`${this.name} barks`);
+        }
+        }
+
+        const dog =new Dog("Tommy");
+        dog.speak(); 
+
+        //Encapsulation
+        function SecretBox() {
+        let secret = "hidden";
+        return {
+            show() {
+            console.log(secret);
+            }
+        };
+        }
+        let box = SecretBox();
+        box.show(); 
+
+        // Regular function
+        function regularFunction() {
+        console.log("Regular Function:", this);
+        }
+        regularFunction();
+
+        // Arrow function
+        const arrowFunction = () => {
+        console.log("Arrow Function:", this);
+        };
+        arrowFunction();
+
+        // method inside object
+        const person = {
+        name: "Sweedy",
+        showThis() {
+            console.log("Method inside object:", this);
+        }
+        };
+        person.showThis();
+
+        // lost this in method
+        const lost = person.showThis;
+        lost();
+
+        // fix with bind
+        const fixed = person.showThis.bind(person);
+        fixed();
+
+        // Constructor function
+        function Student(name) {
+        this.name = name;
+        console.log("constructor this:", this);
+        }
+        const s1 = new Student("Sweedy");
+
+        //event handler html button
+        function buttonClick() {
+        console.log("Event Handler:", this);
+        }
+
+
+
+    </script>
+</body>
+</html>

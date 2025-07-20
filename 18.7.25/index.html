@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //basic heap
+        let obj={
+            name: "xyz",
+            age: 19,
+            place: "Mysore"
+        };
+
+        //Stack lifo
+        function greet(){
+            console.log("hello");
+        }
+        greet();
+
+        //Queue Fifo
+        console.log("1");
+        setTimeout(() => {
+            console.log("2");
+        }, 2000);
+        console.log("3");
+
+        // Synchronous
+        console.log("A");
+        console.log("B");
+
+        // Mactrotask
+        console.log("start");
+        setTimeout(()=>{
+            console.log("Timeout");
+        },0);
+        console.log("End");
+
+        // Microtask
+        console.log("started");
+        Promise.resolve().then(()=>{
+            console.log("Promise done");
+        });
+        console.log("Ended");
+
+        
+    </script>
+</body>
+</html>

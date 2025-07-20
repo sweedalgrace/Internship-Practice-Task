@@ -69,7 +69,7 @@ console.log("x:", x);
 
 let person1 = { name: "Sweety" };
 let person2 = person1;
-person2.name = "Grace";
+person2.name = "Green";
 console.log("person1 name:", person1.name);
 
 // Array
